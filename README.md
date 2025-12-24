@@ -1,4 +1,7 @@
 # todo-sudoku-game
+
+# pause button -> blur overlay
+# reset button -> todo pause timer
 sudoku board
 keypad
 timer

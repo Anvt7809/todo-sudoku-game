@@ -1,3 +1,5 @@
+import { getPauseState } from "./pause.js";
+
 let secondsElapsed = 0;
 let timerInterval: number | null = null;
 
@@ -13,16 +15,16 @@ export function startTimer(timer : HTMLElement) {
     if (timerInterval !== null) return;
 
     timerInterval = window.setInterval(() => {
+        if (getPauseState()) return;
         secondsElapsed++;
         timer.textContent = formatTime(secondsElapsed);
     }, 1000);
 }
 
-export function resetTimer(timer : HTMLElement) {
+export function resetTimer() {
     if (timerInterval !== null) {
         clearInterval(timerInterval);
         timerInterval = null;
     }
     secondsElapsed = 0;
-    timer.textContent = "00:00";
 }

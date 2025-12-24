@@ -1,3 +1,4 @@
+import { getPauseState } from "./pause.js";
 let secondsElapsed = 0;
 let timerInterval = null;
 function formatTime(seconds) {
@@ -11,15 +12,16 @@ export function startTimer(timer) {
     if (timerInterval !== null)
         return;
     timerInterval = window.setInterval(() => {
+        if (getPauseState())
+            return;
         secondsElapsed++;
         timer.textContent = formatTime(secondsElapsed);
     }, 1000);
 }
-export function resetTimer(timer) {
+export function resetTimer() {
     if (timerInterval !== null) {
         clearInterval(timerInterval);
-        timerInterval = null;
+        timerInterval = 0;
     }
     secondsElapsed = 0;
-    timer.textContent = "00:00";
 }
