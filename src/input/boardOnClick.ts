@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { clearHighlights, clearSameNumberHighlight, highlightRowAndColumn, highlightSubGrid, highlightSameNumbers } from "../board/highlight.js";
 import { setSelectedCell, getSelectedCell } from "../state/selection.js";
 
@@ -45,3 +46,32 @@ export function registerOnClick(board: HTMLElement) {
         input.classList.add("selected");
     });
 }
+||||||| parent of 7fff0b8 (push all)
+=======
+import { clearSameNumberHighlight } from "../board/highlight";
+
+export function registerClickIn(board: HTMLElement) {
+    board.addEventListener("focusin", (event: Event) => {
+        const input = event.target as HTMLInputElement;
+
+        if (!input.dataset.row || !input.dataset.col) return;
+
+        const row = Number(input.dataset.row);
+        const col = Number(input.dataset.col);
+
+        clearHighlights();
+        clearSameNumberHighlight();
+
+        highlightRowAndColumn(row, col);
+        highlightSubGrid(row, col);
+        highlightSameNumbers(input.value);
+    });
+}
+
+export function registerClickOut (board : HTMLElement) {
+    board.addEventListener("focusout", () => {
+    clearHighlights();
+    //    clearSameNumberHighlight();
+});
+}
+>>>>>>> 7fff0b8 (push all)
