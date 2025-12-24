@@ -44,6 +44,5 @@ export function createBoard(board, puzzle) {
             board.appendChild(cell);
         });
     });
-    console.log("createBoard called");
 }
 >>>>>>> 7fff0b8 (push all)

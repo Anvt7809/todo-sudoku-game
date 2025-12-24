@@ -367,7 +367,6 @@ pauseOverlay.classList.remove("show");
 ||||||| parent of 7fff0b8 (push all)
 =======
 "use strict";
-//import { isValid } from './board/validation';
 // =======================
 // Sudoku Puzzle Data
 // =======================
@@ -541,9 +540,6 @@ board.addEventListener("input", (event) => {
 // =======================
 // On click handling
 // =======================
-board.addEventListener("wheel", (e) => {
-    e.preventDefault();
-}, { passive: false });
 board.addEventListener("focusin", (event) => {
     const input = event.target;
     if (!input.dataset.row || !input.dataset.col)

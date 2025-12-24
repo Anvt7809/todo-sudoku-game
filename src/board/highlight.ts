@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+export function clearSameNumberHighlight(): void {
+    document.querySelectorAll(".same-number").forEach(el => {
+        el.classList.remove("same-number");
+    });
+}
+
 export function highlightSameNumbers(value: string): void {
     if (!value) return;
 
@@ -51,37 +56,3 @@ export function clearHighlights(): void {
         el.classList.remove("highlight");
     });
 }
-||||||| parent of 7fff0b8 (push all)
-=======
-export function clearSameNumberHighlight(): void {
-    document.querySelectorAll(".same-number").forEach(el => {
-        el.classList.remove("same-number");
-    });
-}
-
-export function highlightSameNumbers(value: string): void {
-    if (!value) return;
-
-    document.querySelectorAll("input").forEach(el => {
-        const input = el as HTMLInputElement;
-        if (input.value === value) {
-            input.classList.add("same-number");
-        }
-    });
-}
-
-export function highlightRowAndColumn(row: number, col: number): void {
-    for (let i = 0; i < 9; i++) {
-        const rowCell = document.querySelector(
-            `input[data-row='${row}'][data-col='${i}']`
-        ) as HTMLInputElement;
-
-        const colCell = document.querySelector(
-            `input[data-row='${i}'][data-col='${col}']`
-        ) as HTMLInputElement;
-
-        rowCell?.classList.add("highlight");
-        colCell?.classList.add("highlight");
-    }
-}
->>>>>>> 7fff0b8 (push all)

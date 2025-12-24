@@ -12,7 +12,10 @@ export function getSelectedCell() {
 =======
 export let selectedCell: HTMLInputElement | null = null;
 
-export function setSelectedCell(cell: HTMLInputElement | null) {
+export function setSelectedCell(cell: HTMLInputElement | null): void {
     selectedCell = cell;
 }
->>>>>>> 7fff0b8 (push all)
+
+export function getSelectedCell() {
+    return selectedCell;
+}

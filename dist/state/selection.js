@@ -12,4 +12,6 @@ export let selectedCell = null;
 export function setSelectedCell(cell) {
     selectedCell = cell;
 }
->>>>>>> 7fff0b8 (push all)
+export function getSelectedCell() {
+    return selectedCell;
+}
