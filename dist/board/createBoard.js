@@ -19,5 +19,4 @@ export function createBoard(board, puzzle) {
             board.appendChild(cell);
         });
     });
-    console.log("createBoard called");
 }
