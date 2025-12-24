@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1>Sudoku</h1>
+
+        <div class="top-bar">
+            <div id="timer">00:00</div>
+
+            <div class="controls">
+                <button id="pause-btn">Pause</button>
+            </div>
+        </div>
+
+        <div id="sudoku-board"></div>
+
+        <div class="right-panel">
+            <div id="keypad">
+                <button data-num="1">1</button>
+                <button data-num="2">2</button>
+                <button data-num="3">3</button>
+                <button data-num="4">4</button>
+                <button data-num="5">5</button>
+                <button data-num="6">6</button>
+                <button data-num="7">7</button>
+                <button data-num="8">8</button>
+                <button data-num="9">9</button>
+                <button data-num="clear" class="clear">⌫</button>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <div class="controls">
+                <button id="check-btn">Check</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="pauseOverlay">
+        <div class="overlay-content">
+            <div class="overlay-title"> ⏸️ Paused </div>
+            <button id="resume-btn">Resume</button>
+        </div>
+    </div>
+
+
+    <script type="module" src="dist/main.js" defer></script>
+</body>
+
+</html>
