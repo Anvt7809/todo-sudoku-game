@@ -1,5 +1,5 @@
-import { clearHighlights, clearSameNumberHighlight, highlightRowAndColumn, highlightSubGrid, highlightSameNumbers } from "../board/highlight.js";
-import { setSelectedCell, getSelectedCell } from "../state/selection.js";
+import { highlightSameNumbers, clearSameNumberHighlight, highlightRowAndColumn, highlightSubGrid, clearHighlights } from "../board/highlight.js";
+import { getSelectedCell, setSelectedCell } from "../state/selection.js";
 export function registerOnClick(board) {
     board.addEventListener("focusin", (event) => {
         const input = event.target;
@@ -15,7 +15,7 @@ export function registerOnClick(board) {
     });
     board.addEventListener("focusout", () => {
         clearHighlights();
-        clearSameNumberHighlight();
+        //    clearSameNumberHighlight();
     });
     board.addEventListener("click", (event) => {
         const target = event.target;

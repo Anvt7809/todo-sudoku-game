@@ -10,7 +10,6 @@ export function registerResetButton(resetBtn, board) {
         document.body.classList.remove("paused");
         pauseOverlay.classList.remove("show");
         // Re-render board: 
-        //createBoard(board);
         //startTimer();
     });
 }

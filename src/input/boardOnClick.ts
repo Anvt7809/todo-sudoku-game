@@ -1,4 +1,5 @@
-import { clearSameNumberHighlight } from "../board/highlight";
+import { highlightSameNumbers, clearSameNumberHighlight, highlightRowAndColumn, highlightSubGrid, clearHighlights } from "../board/highlight.js";
+import { getSelectedCell, setSelectedCell } from "../state/selection.js";
 
 export function registerOnClick(board: HTMLElement) {
     board.addEventListener("focusin", (event: Event) => {
@@ -18,7 +19,30 @@ export function registerOnClick(board: HTMLElement) {
     });
 
     board.addEventListener("focusout", () => {
-    clearHighlights();
-    //    clearSameNumberHighlight();
-});
+        clearHighlights();
+        //    clearSameNumberHighlight();
+    });
+
+    board.addEventListener("click", (event) => {
+        const target = event.target as HTMLElement;
+
+        if (target.tagName !== "INPUT") return;
+
+        const input = target as HTMLInputElement;
+
+        const prev = getSelectedCell();
+
+        if (prev) {
+            prev.classList.remove("selected");
+        }
+
+        clearSameNumberHighlight();
+
+        if (input.value) {
+            highlightSameNumbers(input.value);
+        }
+
+        setSelectedCell(input);
+        input.classList.add("selected");
+    });
 }

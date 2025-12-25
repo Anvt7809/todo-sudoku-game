@@ -1,4 +1,3 @@
-import { setSelectedCell } from "./state/selection.js";
 import { registerInput } from "./input/boardInput.js";
 import { registerKeypad } from "./input/keypadOnClick.js";
 import { createBoard } from "./board/createBoard.js";

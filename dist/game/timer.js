@@ -21,7 +21,7 @@ export function startTimer(timer) {
 export function resetTimer() {
     if (timerInterval !== null) {
         clearInterval(timerInterval);
-        timerInterval = 0;
+        timerInterval = null;
     }
     secondsElapsed = 0;
 }

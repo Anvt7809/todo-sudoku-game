@@ -1,9 +1,3 @@
-export function clearSameNumberHighlight(): void {
-    document.querySelectorAll(".same-number").forEach(el => {
-        el.classList.remove("same-number");
-    });
-}
-
 export function highlightSameNumbers(value: string): void {
     if (!value) return;
 
